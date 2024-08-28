@@ -1,5 +1,5 @@
 import { 
-    clearAllForgotPasswordErrors, 
+  clearAllForgotResetPassErrors, 
     forgotPassword 
   } from '@/store/slices/forgotResetPasswordSlice';
   import React, { useEffect, useState } from 'react'
@@ -30,7 +30,7 @@ import {
     useEffect(() => {
         if (error) {
           toast.error(error),
-          dispatch(clearAllForgotPasswordErrors());
+          dispatch(clearAllForgotResetPassErrors());
         }
         if (isAuthenticated) {
           navigateTo("/");
