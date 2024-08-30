@@ -1,3 +1,4 @@
+import './App.css';
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
@@ -13,6 +14,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from 'react-redux'
 import { getUser } from './store/slices/userSlice'
+import { getAllMessages } from './store/slices/messagesSlice'
 
 
 
@@ -22,6 +24,7 @@ const dispatch = useDispatch()
 
 useEffect(() => {
     dispatch(getUser());
+    dispatch(getAllMessages());
 },[])
 
   return (
