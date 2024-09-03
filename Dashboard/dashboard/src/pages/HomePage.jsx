@@ -91,7 +91,7 @@ const HomePage = () => {
                     <span className="sr-only">Dashboard</span>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side="right">Dashboard</TooltipContent>
+                <TooltipContent side="right" className=" bg-black text-white px-1.5 py-1 rounded-md ">Dashboard</TooltipContent>
               </Tooltip>
             </TooltipProvider>
 
@@ -111,7 +111,7 @@ const HomePage = () => {
                     <span className="sr-only">Add Project</span>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side="right">Add Project</TooltipContent>
+                <TooltipContent side="right" className=" bg-black text-white px-1.5 py-1 rounded-md " >Add Project</TooltipContent>
               </Tooltip>
             </TooltipProvider>
 
@@ -131,7 +131,7 @@ const HomePage = () => {
                     <span className="sr-only">Add Skill</span>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side="right">Add Skill</TooltipContent>
+                <TooltipContent side="right" className=" bg-black text-white px-1.5 py-1 rounded-md " >Add Skill</TooltipContent>
               </Tooltip>
             </TooltipProvider>
 
@@ -151,7 +151,7 @@ const HomePage = () => {
                     <span className="sr-only">Add Application</span>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side="right">Add Application</TooltipContent>
+                <TooltipContent side="right" className=" bg-black text-white px-1.5 py-1 rounded-md " >Add Application</TooltipContent>
               </Tooltip>
             </TooltipProvider>
 
@@ -171,7 +171,7 @@ const HomePage = () => {
                     <span className="sr-only">Add Timeline</span>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side="right">Add Timeline</TooltipContent>
+                <TooltipContent side="right" className=" bg-black text-white px-1.5 py-1 rounded-md " >Add Timeline</TooltipContent>
               </Tooltip>
             </TooltipProvider>
 
@@ -191,7 +191,7 @@ const HomePage = () => {
                     <span className="sr-only">Messages</span>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side="right">Messages</TooltipContent>
+                <TooltipContent side="right" className=" bg-black text-white px-1.5 py-1 rounded-md ">Messages</TooltipContent>
               </Tooltip>
             </TooltipProvider>
 
@@ -211,7 +211,7 @@ const HomePage = () => {
                     <span className="sr-only">Account</span>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side="right">Account</TooltipContent>
+                <TooltipContent side="right" className=" bg-black text-white px-1.5 py-1 rounded-md ">Account</TooltipContent>
               </Tooltip>
             </TooltipProvider>
           </nav>
@@ -233,7 +233,7 @@ const HomePage = () => {
                     <span className="sr-only">Logout</span>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side="right">Logout</TooltipContent>
+                <TooltipContent side="right" className=" bg-black text-white px-1.5 py-1 rounded-md ">Logout</TooltipContent>
               </Tooltip>
             </TooltipProvider>
           </nav>

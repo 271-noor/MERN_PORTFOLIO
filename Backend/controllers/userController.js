@@ -186,7 +186,7 @@ export const updateProfile = catchAsyncErrors(async (req, res, next) => {
 export const updatePassword = catchAsyncErrors(async (req, res, next) => {
   const { currentPassword, newPassword, confirmNewPassword } = req.body;
 
-  if (!currentPassword || newPassword || confirmNewPassword) {
+  if (!currentPassword || !newPassword || !confirmNewPassword) {
     return next(new ErrorHandler("Please Fill All Fields.", 400));
   }
   const user = await User.findById(req.user.id).select("+password");
@@ -199,7 +199,7 @@ export const updatePassword = catchAsyncErrors(async (req, res, next) => {
   if (newPassword !== confirmNewPassword) {
     return next(
       new ErrorHandler(
-        "New Password and Confirm new Password Do not Matched!",
+        "New Password and Confirm New Password Do not Matched!",
         400
       )
     );

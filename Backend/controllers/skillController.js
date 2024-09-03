@@ -77,7 +77,7 @@ export const updateSkill = catchAsyncErrors(async (req, res, next) => {
   );
   res.status(200).json({
     success: true,
-    message: "Skill Updated!",
+    message: "Skill Updated Successfully!",
     skill,
   });
 });
