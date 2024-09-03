@@ -63,7 +63,7 @@ const Messages = () => {
                 {messages && messages.length > 0 ? (
                   messages.map((element) => {
                     return (
-                      <Card key={element._id} className="grid gap-2">
+                      <Card key={element._id} className="grid gap-2 px-3 py-6">
                         {/* For Sender Name... */}
                         <CardDescription className="text-slate-950 ">
                           <span className="font-bold mr-2">Sender Name:</span>
