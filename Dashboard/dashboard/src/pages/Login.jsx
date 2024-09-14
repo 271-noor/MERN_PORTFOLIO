@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import SpecialLoadingButton from "./sub-components/SpecialLoadingButton"
 
+
 const Login = () => {
 
   const [email, setEmail] = useState("");
@@ -80,7 +81,7 @@ const Login = () => {
       </div>
       <div className="hidden bg-muted lg:block">
         <img
-          src="/placeholder.svg"
+          src="./log.png"
           alt="Image"
           className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
         />

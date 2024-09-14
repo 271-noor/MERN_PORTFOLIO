@@ -86,12 +86,12 @@ export const login = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findOne({ email }).select("+password");
 
   if (!user) {
-    return next(new ErrorHandler("Ivalid Email or Password!"));
+    return next(new ErrorHandler("Invalid Email or Password!"));
   }
   const isPasswordMatched = await user.comparePassword(password);
 
   if (!isPasswordMatched) {
-    return next(new ErrorHandler("Ivalid Email or Password!"));
+    return next(new ErrorHandler("Invalid Email or Password!"));
   }
 
   genrateToken(user, "Logged In", 200, res);

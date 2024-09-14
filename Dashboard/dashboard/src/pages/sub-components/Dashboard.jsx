@@ -33,10 +33,9 @@ const Dashboard = () => {
   // ye user ko userSlice se import kiya gya h...
   const { user } = useSelector((state) => state.user);
   const { projects } = useSelector((state) => state.project);
-  const { skills } = useSelector(
-    (state) => state.skill
-  );
+  const { skills } = useSelector((state) => state.skill);
   const { softwareApplications, error, loading, message } = useSelector((state) => state.application);
+
   const { timeline } = useSelector((state) => state.timeline);
 
   const dispatch = useDispatch();
@@ -73,7 +72,8 @@ const Dashboard = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardFooter>
-                  <Link to={user.portfolioURL && user.portfolioURL}>
+                  <Link to={user.portfolioURL && user.portfolioURL}
+                  target="_blank">
                     <Button>Visit Portfolio</Button>
                   </Link>
                 </CardFooter>
@@ -159,6 +159,7 @@ const Dashboard = () => {
                                         ? `${element.projectLink}`
                                         : ""
                                     }
+                                    target="_blank"
                                   >
                                     <Button>Visit</Button>
                                   </Link>
@@ -200,7 +201,7 @@ const Dashboard = () => {
                       })
                     ) : (
                       <p className="text-3xl overflow-y-hidden">
-                        You have not added any Project.
+                        You have not added any Skill.
                       </p>
                     )}
                   </CardContent>

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const ViewProject = () => {
+const ProjectView = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [projectBanner, setProjectBanner] = useState("");
@@ -112,4 +112,4 @@ const ViewProject = () => {
   );
 };
 
-export default ViewProject;
+export default ProjectView;

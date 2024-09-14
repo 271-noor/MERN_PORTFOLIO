@@ -54,7 +54,6 @@ const AddProject = () => {
     formData.append("title", title);
     formData.append("description", description);
     formData.append("projectBanner", projectBanner);
-    // formData.append("projectBannerPreview", projectBannerPreview);
     formData.append("gitRepoLink", gitRepoLink);
     formData.append("projectLink", projectLink);
     formData.append("technologies", technologies);
