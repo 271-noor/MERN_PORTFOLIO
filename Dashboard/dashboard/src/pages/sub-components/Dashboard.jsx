@@ -32,11 +32,13 @@ import SpecialLoadingButton from "./SpecialLoadingButton";
 const Dashboard = () => {
   // ye user ko userSlice se import kiya gya h...
   const { user } = useSelector((state) => state.user);
-  const { projects } = useSelector((state) => state.project);
-  const { skills } = useSelector((state) => state.skill);
   const { softwareApplications, error, loading, message } = useSelector((state) => state.application);
+  
+  const { projects } = useSelector((state) => state.project);
+  console.log(projects)
+  const { skills } = useSelector((state) => state.skill);
+  const { timelines } = useSelector((state) => state.timeline);
 
-  const { timeline } = useSelector((state) => state.timeline);
 
   const dispatch = useDispatch();
 
@@ -82,9 +84,12 @@ const Dashboard = () => {
               <Card className="flex flex-col justify-center">
                 <CardHeader className="pb-2 ">
                   <CardTitle>Project Completed</CardTitle>
-                  <CardTitle className="text-6xl">
-                    {projects && projects.length}
+                  <CardTitle className="text-5xl">
+                    {
+                      projects && projects.length
+                    }
                   </CardTitle>
+                
                 </CardHeader>
                 <CardFooter className="">
                   <Link to={"/manage/projects"}>
@@ -242,9 +247,13 @@ const Dashboard = () => {
                                 </TableCell>
                                 <TableCell>
                                     {
-                                      loading && appId === element._id ? <SpecialLoadingButton content={"Deleting"} width={"w-fit"} /> : <Button onClick={() => handleDeleteSoftwareApp(element._id)} >Delete</Button>
+                                      loading && appId === element._id ? <SpecialLoadingButton content={"Deleting"} width={"w-fit"} /> 
+                                      : 
+                                      <Button onClick={() => handleDeleteSoftwareApp(element._id)} >
+                                        Delete
+                                      </Button>
                                     }
-                                  
+
                                 </TableCell>
                               </TableRow>
                             );
@@ -277,8 +286,8 @@ const Dashboard = () => {
                         </TableRow>
                       </TableHeader>
                       <TableBody>
-                        {timeline && timeline.length > 0 ? (
-                          timeline.map((element) => {
+                        {timelines && timelines.length > 0 ? (
+                          timelines.map((element) => {
                             return (
                               <TableRow className="bg-accent" key={element._id}>
                                 <TableCell className="font-medium">

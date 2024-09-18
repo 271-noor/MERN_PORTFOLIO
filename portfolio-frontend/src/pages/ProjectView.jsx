@@ -84,7 +84,7 @@ const ProjectView = () => {
 
               <div className="w-full sm:col-span-4">
                 <p className="text-2xl mb-2">Deployed</p>
-                <p>{deployed}</p>
+                <p>{item.deployed}</p>
               </div>
 
               <div className="w-full sm:col-span-4">

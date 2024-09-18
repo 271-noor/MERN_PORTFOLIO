@@ -131,10 +131,10 @@ export const  deleteProject = catchAsyncErrors(async(req, res, next) => {
 
 // For Get All Projects Function Code...
 export const  getAllProjects = catchAsyncErrors(async(req, res, next) => {
-    const project = await Project.find();
+    const projects = await Project.find();
     res.status(200).json({
       success: true,
-      project,
+      projects,
     });
 });
 

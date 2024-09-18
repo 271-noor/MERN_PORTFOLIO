@@ -26,7 +26,7 @@ const Messages = () => {
   const { loading, messages, error, message } = useSelector(
     (state) => state.messages
   );
-
+    console.log(messages)
   const dispatch = useDispatch();
   const [messageId, setMessageId] = useState("");
 

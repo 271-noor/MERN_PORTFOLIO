@@ -80,7 +80,7 @@ const UpdateProject = () => {
     }
   }, [id, loading, error, message]);
 
-  const handleUpdateProject = () => {
+  const handleUpdateProject = (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("title", title);

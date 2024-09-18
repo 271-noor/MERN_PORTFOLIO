@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { 
+  Card, 
+  CardContent, 
+  CardHeader, 
+  CardTitle 
+} from "@/components/ui/card";
 import {
   Table,
   TableBody,
@@ -12,17 +17,17 @@ import { Tabs, TabsContent } from "@/components/ui/tabs";
 import {
   clearAllTimelineErrors,
   deleteTimeline,
-  getAllTimeline,
+  getAllTimelines,
   resetTimelineSlice,
 } from "@/store/slices/timelineSlice";
 import { Trash2 } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const ManageTimeline = () => {
-  const { loading, message, error, timeline } = useSelector(
+  const { loading, message, error, timelines } = useSelector(
     (state) => state.timeline
   );
 
@@ -40,7 +45,7 @@ const ManageTimeline = () => {
     if (message) {
       toast.success(message);
       dispatch(resetTimelineSlice());
-      dispatch(getAllTimeline());
+      dispatch(getAllTimelines());
     }
   }, [dispatch, loading, message, error]);
 
@@ -69,8 +74,8 @@ const ManageTimeline = () => {
                   </TableHeader>
 
                   <TableBody>
-                    {timeline && timeline.length > 0 ? (
-                      timeline.map((element) => {
+                    {timelines && timelines.length > 0 ? (
+                      timelines.map((element) => {
                         return (
                           <TableRow className="bg-accent" key={element._id}>
                             <TableCell className="font-medium">
@@ -89,7 +94,12 @@ const ManageTimeline = () => {
                             </TableCell>
                             <TableCell className="flex justify-end">
                               <button className="border-red-600 border-2 rounded-full h-8 w-8 flex justify-center items-center text-red-600 hover:text-slate-50 hover:bg-red-600">
-                                <Trash2 className="h-6 w-6" onClick={() => handleDeleteTimeline(element._id)} />
+                                <Trash2
+                                  className="h-6 w-6"
+                                  onClick={() =>
+                                    handleDeleteTimeline(element._id)
+                                  }
+                                />
                               </button>
                             </TableCell>
                           </TableRow>
@@ -98,8 +108,8 @@ const ManageTimeline = () => {
                     ) : (
                       <TableRow>
                         <TableCell className="text-3xl overflow-y-hidden">
-                           You Have Not Added Any Timeline.
-                           </TableCell>
+                          You Have Not Added Any Timeline.
+                        </TableCell>
                       </TableRow>
                     )}
                   </TableBody>

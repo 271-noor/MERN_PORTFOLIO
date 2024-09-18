@@ -118,6 +118,7 @@ export const getUser = catchAsyncErrors(async (req, res, next) => {
     success: true,
     user,
   });
+
 });
 
 // Update Profile

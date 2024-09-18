@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { type } from "os";
+
 
 const projectSchema = new mongoose.Schema({
   title: String,

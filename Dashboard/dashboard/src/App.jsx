@@ -15,7 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from 'react-redux'
 import { getUser } from './store/slices/userSlice'
 import { getAllMessages } from './store/slices/messagesSlice'
-import { getAllTimeline } from './store/slices/timelineSlice';
+import { getAllTimelines } from './store/slices/timelineSlice';
 import { getAllSkills } from './store/slices/skillSlice';
 import { getAllSoftwareApplications } from './store/slices/softwareApplicationSlice';
 import { getAllProjects } from './store/slices/projectSlice';
@@ -29,7 +29,7 @@ const dispatch = useDispatch()
 useEffect(() => {
     dispatch(getUser());
     dispatch(getAllMessages());
-    dispatch(getAllTimeline());
+    dispatch(getAllTimelines());
     dispatch(getAllSkills());
     dispatch(getAllSoftwareApplications());
     dispatch(getAllProjects());

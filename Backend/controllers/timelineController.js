@@ -11,7 +11,7 @@ export const postTimeline = catchAsyncErrors (async(req,res,next)=>{
     })
     res.status(200).json({
         success:true,
-        message:"Timeline Added",
+        message:"Timeline Added successfully",
         newTimeline,
     })
 });
@@ -24,16 +24,16 @@ export const deleteTimeline = catchAsyncErrors(async(req,res,next)=>{
     await timeline.deleteOne();
     res.status(200).json({
         success:true,
-        message:"Timeline Deleted!",
+        message:"Timeline Deleted successfully!",
     });
 
 });
 
 // For Get All Timelines Function Code...
 export const getAllTimelines = catchAsyncErrors(async(req,res,next)=>{
-    const timeline =await Timeline.find();
+    const timelines =await Timeline.find();
     res.status(200).json ({
         success:true,
-        timeline,
+        timelines,
     });
 });

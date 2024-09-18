@@ -6,7 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Tabs, TabsContent } from "@/components/ui/tabs";
+import { 
+  Tabs, 
+  TabsContent 
+} from "@/components/ui/tabs";
 import {
   clearAllSkillErrors,
   deleteSkill,
@@ -32,7 +35,6 @@ const ManageSkills = () => {
   const { skills, loading, message, error } = useSelector(
     (state) => state.skill
   );
-
   const dispatch = useDispatch();
 
   const [newProficiency, setNewProficiency] = useState("");
@@ -42,7 +44,7 @@ const ManageSkills = () => {
   };
 
   //  For Update Skills...
-  const handleUpdateSkill = (id) => {
+  const handleUpdateSkill = (id,) => {
     dispatch(updateSkill(id, newProficiency))
   };
 

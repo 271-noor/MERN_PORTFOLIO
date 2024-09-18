@@ -176,7 +176,7 @@ export const updateProject = (id, newData) => async(dispatch) => {
   try {
     const { data } = await axios.put(
       `http://localhost:4000/api/v1/project/update/${id}`, newData,
-      { withCredentials: true, headers: {"Contesnt-Type": "multipart/form-data"} }
+      { withCredentials: true, headers: {"Content-Type": "multipart/form-data"} }
     );
     dispatch(projectSlice.actions.updateProjectSuccess(data.message));
     dispatch(projectSlice.actions.clearAllErrors());

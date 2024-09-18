@@ -5,28 +5,28 @@ const timelineSlice = createSlice({
   name: "timeline",
   initialState: {
     loading: false,
-    timeline: [],
+    timelines: [],
     error: null,
     message: null,
   },
   reducers: {
     // Code For get all Timelines Request...
-    getAllTimelinesRequest(state, action) {
-      state.timeline = [], 
+    getAllTimelineRequest(state, action) {
+      state.timelines = [], 
       state.error = null, 
       state.loading = true;
     },
 
     // Code For get all Timeline Success...
     getAllTimelineSuccess(state, action) {
-      state.timeline = action.payload,
+      state.timelines = action.payload,
         state.error = null,
         state.loading = false;
     },
 
     // Code For get all Timeline Failed...
     getAllTimelineFailed(state, action) {
-      state.timeline = state.timeline,
+      state.timelines = state.timelines,
         state.error = action.payload,
         state.loading = false;
     },
@@ -77,7 +77,7 @@ const timelineSlice = createSlice({
 
     resetTimelineSlice(state, action) {
         state.error = null;
-        state.timeline = state.timeline;
+        state.timelines = state.timelines;
         state.message = null;
         state.loading = false;
     },
@@ -85,14 +85,14 @@ const timelineSlice = createSlice({
     // Code For Clear All Errors...
     clearAllErrors(state, action) {
         state.error = null, 
-        state.timeline = state.timeline;
+        state.timelines = state.timelines;
     },
   },
 });
 
 //  Function Code For Get All Timelines...
-export const getAllTimeline = () => async (dispatch) => {
-  dispatch(timelineSlice.actions.getAllTimelinesRequest());
+export const getAllTimelines = () => async (dispatch) => {
+  dispatch(timelineSlice.actions.getAllTimelineRequest());
   try {
     const { data } = await axios.get(
       "http://localhost:4000/api/v1/timeline/getall",

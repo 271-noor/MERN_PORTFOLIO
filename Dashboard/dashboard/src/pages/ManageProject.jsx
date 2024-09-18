@@ -46,10 +46,6 @@ const ManageProject = () => {
 
   const dispatch = useDispatch();
 
-  const handleInputChange = (proficiency) => {
-    setNewProficiency(proficiency);
-  };
-
   //  For Delete Projects...
   const handleDeleteProject = (id) => {
     dispatch(deleteProject(id));

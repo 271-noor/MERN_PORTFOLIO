@@ -40,8 +40,8 @@ const ViewProject = () => {
     getProject();
   }, [id]);
 
-  const descriptionInListFormat = description.split(".");
-  const technologiesInListFormat = technologies.split(",");
+  const descriptionInListFormat = description.split(". ");
+  const technologiesInListFormat = technologies.split(", ");
 
   return (
     <>
